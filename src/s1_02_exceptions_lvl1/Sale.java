@@ -6,8 +6,8 @@ public class Sale {
     private ArrayList<Product> products;
     private float totalPrice;
 
-    public Sale(ArrayList<Product> products) {
-        this.products = new ArrayList<Product>();
+    public Sale() {
+        this.products = new ArrayList<>();
         this.totalPrice = 0f;
     }
 
@@ -15,19 +15,25 @@ public class Sale {
         return this.products;
     }
 
-    //Afegir exception getMessage()
-    public void setProducts(Product products) {
-        products.add(product);
+    public void addProduct(Product product) {
+        this.products.add(product);
     }
 
-//    public void addTotalPrice(float totalPrice) {
-//        this.totalPrice += totalPrice;
-//    }
+public void calculateTotal() throws EmptySaleException {
+    if (products.isEmpty()) {
+        throw new EmptySaleException("To add a sale, first you have to add products.");
+    }
+
+    totalPrice = 0.0f;
+    for (Product p : products) {
+        totalPrice += p.getPrice();
+    }
+}
 
     // For + afegir preus a totalPrice + return totalPrice
     // Exception noProducts + exception Indexoutofbounds
-    public void calculateTotal(Product products) {
-        this.totalPrice += totalPrice;
+    public double getTotalPrice() {
+        return totalPrice;
     }
 
 }

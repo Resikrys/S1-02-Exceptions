@@ -30,8 +30,6 @@ public void calculateTotal() throws EmptySaleException {
     }
 }
 
-    // For + afegir preus a totalPrice + return totalPrice
-    // Exception noProducts + exception Indexoutofbounds
     public double getTotalPrice() {
         return totalPrice;
     }

@@ -4,15 +4,36 @@ import java.util.ArrayList;
 
 public class Main {
 
-    static ArrayList<Product> products = new ArrayList<>();
-
     public static void main(String[] args) {
-    //Crear productes i guardar-los a l'array (sale instance) + instance calculateTotal
-        Product product1 = new Product("apple", 2.75f);
-        Product product2 = new Product("banana", 3.40f);
-        Product product3 = new Product("pumpkin", 6.99f);
+        //Empty sale trial
+        Sale sale = new Sale();
 
-        System.out.println(products);
+        try {
+            sale.calculateTotal();
+        } catch (EmptySaleException e) {
+            System.out.println("Captured exception: " + e.getMessage());
+        }
+
+        //Adding products trial
+        sale.addProduct(new Product("Book", 15.50f));
+        sale.addProduct(new Product("Pencil", 1.20f));
+
+        try {
+            sale.calculateTotal();
+            System.out.println("Preu total de la venda: " + sale.getTotalPrice() + " €");
+        } catch (EmptySaleException e) {
+            System.out.println("Captured exception: " + e.getMessage());
+        }
+
+        // IndexOutOfBoundsException
+//        try {
+//            ArrayList<String> llista = new ArrayList<>();
+//            llista.add("A");
+//            llista.add("B");
+//            System.out.println("Element a la posició 3: " + llista.get(3)); // Error aquí
+//        } catch (IndexOutOfBoundsException e) {
+//            System.out.println("IndexOutOfBoundsException capturada: " + e.getMessage());
+//        }
 
         }
     }

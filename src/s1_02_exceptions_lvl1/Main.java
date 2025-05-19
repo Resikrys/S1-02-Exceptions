@@ -26,14 +26,12 @@ public class Main {
         }
 
         // IndexOutOfBoundsException
-//        try {
-//            ArrayList<String> llista = new ArrayList<>();
-//            llista.add("A");
-//            llista.add("B");
-//            System.out.println("Element a la posició 3: " + llista.get(3)); // Error aquí
-//        } catch (IndexOutOfBoundsException e) {
-//            System.out.println("IndexOutOfBoundsException capturada: " + e.getMessage());
-//        }
+        try {
+            Product p = sale.getProducts().get(5); // Índex out of arraylist lenght
+            System.out.println("Product in position 5: " + p.getName());
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("IndexOutOfBoundsException captured: " + e.getMessage());
+        }
 
         }
     }

@@ -53,4 +53,21 @@ public class Input {
             }
         }
     }
+
+    public static char readChar(String message) {
+        while(true) {
+            try {
+                System.out.print(message + ": ");
+                String input = scanner.nextLine();
+                if (input.length() != 1) {
+                    throw new Exception("Error: You have to insert only one character.");
+                }
+                return input.charAt(0);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+
 }

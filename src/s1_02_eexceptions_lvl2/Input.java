@@ -88,7 +88,7 @@ public class Input {
         while (true) {
             try {
                 System.out.print(message + " (s/n): ");
-                boolean input = scanner.nextLine.trim().toLowerCase();
+                String input = scanner.nextLine().trim().toLowerCase();
                 if(input.equals("s")) {
                     return true;
                 } else if(input.equals("n")) {

@@ -20,7 +20,7 @@ public class Main {
 
         try {
             sale.calculateTotal();
-            System.out.println("Preu total de la venda: " + sale.getTotalPrice() + " €");
+            System.out.println("Total sale price: " + sale.getTotalPrice() + " €");
         } catch (EmptySaleException e) {
             System.out.println("Captured exception: " + e.getMessage());
         }

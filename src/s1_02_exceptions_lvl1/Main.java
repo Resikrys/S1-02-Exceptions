@@ -15,8 +15,8 @@ public class Main {
         }
 
         //Adding products trial
-        sale.addProduct(new Product("Book", 15.50f));
-        sale.addProduct(new Product("Pencil", 1.20f));
+        sale.addProduct(new Product("Book", 15.50));
+        sale.addProduct(new Product("Pencil", 1.25));
 
         try {
             sale.calculateTotal();
@@ -27,7 +27,7 @@ public class Main {
 
         // IndexOutOfBoundsException
         try {
-            Product p = sale.getProducts().get(5); // Índex out of arraylist lenght
+            Product p = sale.getProducts().get(5); // Índex out of arraylist length
             System.out.println("Product in position 5: " + p.getName());
         } catch (IndexOutOfBoundsException e) {
             System.out.println("IndexOutOfBoundsException captured: " + e.getMessage());

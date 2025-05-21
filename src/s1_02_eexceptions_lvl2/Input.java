@@ -49,6 +49,7 @@ public class Input {
                 return scanner.nextDouble();
             } catch (InputMismatchException e) {
                 System.out.println("Format error. Insert a double value.");
+            } finally {
                 scanner.nextLine();
             }
         }
@@ -58,7 +59,7 @@ public class Input {
         while(true) {
             try {
                 System.out.print(message + ": ");
-                String input = scanner.nextLine();
+                String input = scanner.nextLine().trim();
                 if (input.length() != 1) {
                     throw new Exception("Error: You have to insert only one character.");
                 }

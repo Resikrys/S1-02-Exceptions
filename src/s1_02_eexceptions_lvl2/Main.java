@@ -16,7 +16,7 @@ public class Main {
         System.out.println("Bigger decimal number: " + doubleNumber);
         System.out.println("Letter: " + letter);
         System.out.println("Word: " + word);
-        System.out.println("Answer: " + confirmation);
+        System.out.println("Answer: " + ((confirmation) ? "Yes" : "No"));
 
     }
 }

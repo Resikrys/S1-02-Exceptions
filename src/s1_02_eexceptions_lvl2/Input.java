@@ -12,7 +12,7 @@ public class Input {
                 System.out.print(message + ": ");
                 return scanner.nextByte();
             } catch (InputMismatchException e) {
-                System.out.println("Format error. Insert a byte value.");
+                System.out.println("Format error: Insert a byte value.");
                 scanner.nextLine();
             }
         }
@@ -24,7 +24,7 @@ public class Input {
                 System.out.print(message + ": ");
                 return scanner.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("Format error. Insert an int value.");
+                System.out.println("Format error: Insert an int value.");
                 scanner.nextLine();
             }
         }
@@ -36,7 +36,7 @@ public class Input {
                 System.out.print(message + ": ");
                 return scanner.nextFloat();
             } catch (InputMismatchException e) {
-                System.out.println("Format error. Insert a float value.");
+                System.out.println("Format error: Insert a float value.");
                 scanner.nextLine();
             }
         }
@@ -79,6 +79,24 @@ public class Input {
                 }
                 return input;
             } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    public static boolean readYesNo(String message) {
+        while (true) {
+            try {
+                System.out.print(message + " (s/n): ");
+                boolean input = scanner.nextLine.trim().toLowerCase();
+                if(input.equals("s")) {
+                    return true;
+                } else if(input.equals("n")) {
+                    return false;
+                } else {
+                    throw new Exception("Error: you have to insert 's' or 'n'.");
+                }
+            } catch(Exception e) {
                 System.out.println(e.getMessage());
             }
         }

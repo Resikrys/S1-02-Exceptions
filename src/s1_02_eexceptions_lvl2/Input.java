@@ -69,5 +69,18 @@ public class Input {
         }
     }
 
-
+    public static String readString(String message) {
+        while(true) {
+            try {
+                System.out.print(message + ": ");
+                String input = scanner.nextLine();
+                if (input.isEmpty()) {
+                    throw new Exception("Error: Text can't be empty.");
+                }
+                return input;
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
 }

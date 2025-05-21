@@ -24,7 +24,6 @@ public void calculateTotal() throws EmptySaleException {
         throw new EmptySaleException("To add a sale, first you have to add products.");
     }
 
-    totalPrice = 0.0f;
     for (Product p : products) {
         totalPrice += p.getPrice();
     }
